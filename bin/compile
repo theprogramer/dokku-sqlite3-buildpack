@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 echo "-----> Injecting sqlite3 ..."
-if /usr/bin/dpkg -s libsqlite3-dev > /dev/null; then
-  echo "sqlite3 is already installed (skipping apt-get update/install)"
-else
-  echo "sqlite3 is not installed (will install via apt-get)"
-  id=$(/bin/bash -c "apt-get update && apt-get install -y libsqlite3-dev && apt-get clean")
-  test $(docker wait $id) -eq 0
-fi
-
-
+cp ../vendor/shell.c /usr/include/
+cp ../vendor/sqlite3.c /usr/include/
+cp ../vendor/sqlite3ext.h /usr/include/
+cp ../vendor/sqlite3.h /usr/include/
+cp ../vendor/sqldiff /usr/bin/
+cp ../vendor/sqlite3 /usr/bin/
+cp ../vendor/sqlite3_analyzer /usr/bin/
