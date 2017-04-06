@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 echo "-----> Injecting sqlite3 ..."
-cp ../vendor/shell.c /usr/include/
-cp ../vendor/sqlite3.c /usr/include/
-cp ../vendor/sqlite3ext.h /usr/include/
-cp ../vendor/sqlite3.h /usr/include/
-cp ../vendor/sqldiff /usr/bin/
-cp ../vendor/sqlite3 /usr/bin/
-cp ../vendor/sqlite3_analyzer /usr/bin/
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/shell.c -P /usr/include
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqlite3.c -P /usr/include
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqlite3ext.h -P /usr/include
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqlite3.h -P /usr/include
+
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqldiff -P /usr/bin
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqlite3 -P /usr/bin
+wget https://github.com/theprogramer/dokku-sqlite3-buildpack/raw/master/vendor/sqlite3_analyzer -P /usr/bin
